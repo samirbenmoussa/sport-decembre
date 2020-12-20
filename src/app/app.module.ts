@@ -14,6 +14,7 @@ import { NextMatchComponent } from './components/next-match/next-match.component
 import { VideosComponent } from './components/videos/videos.component';
 import { OurBlogComponent } from './components/our-blog/our-blog.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
