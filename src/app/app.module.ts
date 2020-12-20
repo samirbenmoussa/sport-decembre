@@ -13,6 +13,7 @@ import { ResultatComponent } from './components/resultat/resultat.component';
 import { NextMatchComponent } from './components/next-match/next-match.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { OurBlogComponent } from './components/our-blog/our-blog.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { OurBlogComponent } from './components/our-blog/our-blog.component';
     ResultatComponent,
     NextMatchComponent,
     VideosComponent,
-    OurBlogComponent
+    OurBlogComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
