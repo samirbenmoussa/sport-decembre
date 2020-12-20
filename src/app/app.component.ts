@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProjectAng';
+calcul(a:number,b:number,c:number){
+  return(a+b+c)
+}
 }
