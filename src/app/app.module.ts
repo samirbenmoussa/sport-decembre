@@ -15,6 +15,7 @@ import { VideosComponent } from './components/videos/videos.component';
 import { OurBlogComponent } from './components/our-blog/our-blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContacttComponent } from './components/contactt/contactt.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NextMatchComponent,
     VideosComponent,
     OurBlogComponent,
-    HomeComponent
+    HomeComponent,
+    
+    ContacttComponent
   ],
   imports: [
     BrowserModule,
