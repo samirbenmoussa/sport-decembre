@@ -16,6 +16,9 @@ import { OurBlogComponent } from './components/our-blog/our-blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContacttComponent } from './components/contactt/contactt.component';
+import { MatcheComponent } from './components/matche/matche.component';
+import { AllMatchesComponent } from './components/all-matches/all-matches.component';
+import { AddMatchComponent } from './components/add-match/add-match.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,13 @@ import { ContacttComponent } from './components/contactt/contactt.component';
     OurBlogComponent,
     HomeComponent,
     
-    ContacttComponent
+    ContacttComponent,
+    
+    MatcheComponent,
+    
+    AllMatchesComponent,
+    
+    AddMatchComponent
   ],
   imports: [
     BrowserModule,

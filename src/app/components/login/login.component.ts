@@ -7,9 +7,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
   user:any= {};
-  loginForm!:FormGroup;
+  loginForm!:FormGroup
 
   constructor(private formBuilder:FormBuilder) { }
   ngOnInit(): void {
@@ -22,6 +21,6 @@ export class LoginComponent implements OnInit {
     })
   }
   login() {
-console.log('here my object' , this.user);
+console.log('here my object' , this.user)
 }
   }
