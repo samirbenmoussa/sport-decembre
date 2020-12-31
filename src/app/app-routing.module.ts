@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddMatchComponent } from './components/add-match/add-match.component';
+import { AddPlayerComponent } from './components/add-player/add-player.component';
 import { AllMatchesComponent } from './components/all-matches/all-matches.component';
 import { ContacttComponent } from './components/contactt/contactt.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path: 'contactt', component: ContacttComponent},
   {path: 'matche', component: MatcheComponent},
   {path: 'all-matches', component: AllMatchesComponent},
-  {path: 'add-match', component: AddMatchComponent}
+  {path: 'add-match', component: AddMatchComponent},
+  {path: 'add-player', component: AddPlayerComponent}
+
 
 
 

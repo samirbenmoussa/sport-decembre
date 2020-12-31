@@ -19,6 +19,9 @@ import { ContacttComponent } from './components/contactt/contactt.component';
 import { MatcheComponent } from './components/matche/matche.component';
 import { AllMatchesComponent } from './components/all-matches/all-matches.component';
 import { AddMatchComponent } from './components/add-match/add-match.component';
+import { AddPlayerComponent } from './components/add-player/add-player.component';
+import { AllPlayerComponent } from './components/all-player/all-player.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,13 @@ import { AddMatchComponent } from './components/add-match/add-match.component';
     
     AllMatchesComponent,
     
-    AddMatchComponent
+    AddMatchComponent,
+    
+    AddPlayerComponent,
+    
+    AllPlayerComponent,
+    
+    AdminComponent
   ],
   imports: [
     BrowserModule,
