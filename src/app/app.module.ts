@@ -22,6 +22,7 @@ import { AddMatchComponent } from './components/add-match/add-match.component';
 import { AddPlayerComponent } from './components/add-player/add-player.component';
 import { AllPlayerComponent } from './components/all-player/all-player.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { PlayersComponent } from './components/players/players.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { AdminComponent } from './components/admin/admin.component';
     
     AllPlayerComponent,
     
-    AdminComponent
+    AdminComponent,
+    
+    PlayersComponent
   ],
   imports: [
     BrowserModule,

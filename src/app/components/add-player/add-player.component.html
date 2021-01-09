@@ -16,23 +16,23 @@
             <div class="col-lg-12">
               <form [formGroup] ='addplayerform'>
                 <div class="form-group">
-                  <input type="text" class="form-control"  formControlName='PlayerNamer' placeholder="player Name">
+                  <input type="text" class="form-control"  formControlName='PlayerName' placeholder="player Name">
                 </div>
-                <div *ngIf='addplayerform.controls["PlayerNamer"].invalid && 
-                (addplayerform.controls["PlayerNamer"].dirty || addplayerform.controls["PlayerNamer"].touched)'>
-                  <div *ngIf="addplayerform.controls['PlayerNamer'].errors.required" class="text-danger">
+                <div *ngIf='addplayerform.controls["PlayerName"].invalid && 
+                (addplayerform.controls["PlayerName"].dirty || addplayerform.controls["PlayerName"].touched)'>
+                  <div *ngIf="addplayerform.controls['PlayerName'].errors.required" class="text-danger">
                     player Name is required
                   </div>
-                  <div *ngIf="addplayerform.controls['PlayerNamer'].errors.minlength" class="text-danger">
+                  <div *ngIf="addplayerform.controls['PlayerName'].errors.minlength" class="text-danger">
                     player Name must have at least 5 chars
                   </div>
                 </div>
                 <div class="form-group">
-                <input type="number" class="form-control" formControlName='NPlayer' placeholder="N° Player">
+                <input type="number" class="form-control" formControlName='NumPlayer' placeholder="N° Player">
                 </div>
-                <div *ngIf='addplayerform.controls["NPlayer"].invalid && 
-                (addplayerform.controls["NPlayer"].dirty || addplayerform.controls["NPlayer"].touched)'>
-                  <div *ngIf="addplayerform.controls['NPlayer'].errors.required" class="text-danger">
+                <div *ngIf='addplayerform.controls["NumPlayer"].invalid && 
+                (addplayerform.controls["NumPlayer"].dirty || addplayerform.controls["NumPlayer"].touched)'>
+                  <div *ngIf="addplayerform.controls['NumPlayer'].errors.required" class="text-danger">
                     N°Player is required
                   </div>
                 </div>

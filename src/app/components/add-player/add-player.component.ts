@@ -8,13 +8,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class AddPlayerComponent implements OnInit {
+  players: any = {};
+
   addplayerform!: FormGroup 
 constructor(private formBuilder:FormBuilder) { }
 
 ngOnInit() : void {
   this.addplayerform = this.formBuilder.group ({
-    PlayerNamer: ['', [Validators.minLength(5), Validators.required]],
-    NPlayer: ['',[ Validators.required]],
+    PlayerName: ['', [Validators.minLength(5), Validators.required]],
+    NumPlayer: ['',[ Validators.required]],
     PostePlayer: ['',[ Validators.required]],
     TeamPlayer: ['',[ Validators.required]]
   })
