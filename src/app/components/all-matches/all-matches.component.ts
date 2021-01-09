@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchService } from 'src/app/service/match.service';
+import { MatcheComponent } from '../matche/matche.component';
 
 @Component({
   selector: 'app-all-matches',
@@ -6,29 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-matches.component.css']
 })
 export class AllMatchesComponent implements OnInit {
-matches:any;
+  matches: any;
 
-  constructor() { }
+  constructor(private matchService: MatchService) { }
 
   ngOnInit() {
-    this.matches = [
-     {id:1, teamOne : 'FCB', teamTwo : 'RMD' , 
-    scoreOne: '1' , scoreTwo : '3', 
-    logoOne : 'assets/images/logo_1.png',
-    logoTwo : 'assets/images/logo_2.png'}, 
-
-    {id:1, teamOne : 'juv', teamTwo : 'atm' , 
-    scoreOne: '5' , scoreTwo : '5', 
-    logoOne : 'assets/images/logo_1.png',
-    logoTwo : 'assets/images/logo_2.png'}, 
-
-    {id:1, teamOne : 'aaa', teamTwo : 'bd' , 
-    scoreOne: '12' , scoreTwo : '35', 
-    logoOne : 'assets/images/logo_1.png',
-    logoTwo : 'assets/images/logo_2.png'}, 
-
-
-    ]
-  }
+    this.matchService.getAllMatches().subscribe(
+      data => {
+        this.matches = data ; 
+      }
+    );
+    }
 
 }

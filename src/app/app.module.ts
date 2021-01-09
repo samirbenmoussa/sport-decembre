@@ -23,6 +23,9 @@ import { AddPlayerComponent } from './components/add-player/add-player.component
 import { AllPlayerComponent } from './components/all-player/all-player.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { PlayersComponent } from './components/players/players.component';
+import { DataService } from './service/data.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { PlayersComponent } from './components/players/players.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(DataService),
+
     AppRoutingModule
   ],
   providers: [],
