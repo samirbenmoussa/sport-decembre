@@ -8,7 +8,7 @@
     </div>
 </div>
 
- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
             aria-controls="pills-home" aria-selected="true">Players</a>
@@ -25,35 +25,30 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Number</th>
-                    <th scope="col">Post</th>
-                    <th scope="col">Team</th>
+                    <th scope="col">Id</th>
+
+                    <th scope="col">Player name</th>
+                    <th scope="col">Num Player</th>
+                    <th scope="col">Post Player</th>
+                    <th scope="col">Team Player </th>
                     <th scope="col">Action </th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <tr *ngFor=' let p of players'>
+                    <td>{{p.id}}</td>
+                    <td>{{p.playerName}}</td>
+                    <td>{{p.numPlayer}}</td>
+                    <td>{{p.postePlayer}}</td>
+                    <td>{{p.teamPlayer}}</td>
                     <td> <button class="btn btn-succes"> Edit</button>
-                         <button class="btn btn-danger "style="margin-left: 2%;"> Delete</button> 
-                         <button class="btn btn-warning " style="margin-left: 2%;"s> Display</button>
+                        <button class="btn btn-danger " style="margin-left: 2%;" (click)='deletePlayerComponent(p.id)'> Delete</button>
+                        <button class="btn btn-warning " style="margin-left: 2%;"(click)='goToPlayer(p.id)'> Display</button>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>
-                      <button class="btn btn-succes" > Edit</button> 
-                      <button class="btn btn-danger" style="margin-left: 2%;"> Delete</button> 
-                      <button class="btn btn-warning" style="margin-left: 2%;"> Display</button>
-                    </td>
-                </tr>
+
+
             </tbody>
         </table>
     </div>
@@ -63,38 +58,31 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Number</th>
-                    <th scope="col">Post</th>
-                    <th scope="col">Team</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Team One</th>
+                    <th scope="col">Team Two</th>
+                    <th scope="col">Score One</th>
+                    <th scope="col">Score Two </th>
                     <th scope="col">Action </th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <tr *ngFor=' let m of matches'>
+                    <td>{{m.id}}</td>
+                    <td>{{m.teamOne}}</td>
+                    <td>{{m.teamTwo}}</td>
+                    <td>{{m.scoreOne}}</td>
+                    <td>{{m.scoreTwo}}</td>
                     <td> 
-                        <button class="btn btn-succes" > Edit</button> 
-                        <button class="btn btn-danger" style="margin-left: 2%;"> Delete</button> 
-                        <button class="btn btn-warning" style="margin-left: 2%;"> Display</button>
+                        <button class="btn btn-success"> Edit</button>
+                        <button class="btn btn-danger"  (click)='deleteMatchComponent(m.id)'>Delete</button>
+                        <button class="btn btn-warning" (click)='goToMatch(m.id)'> Display</button>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td> 
-                        <button class="btn btn-succes" > Edit</button> 
-                        <button class="btn btn-danger" style="margin-left: 2%;"> Delete</button> 
-                        <button class="btn btn-warning" style="margin-left: 2%;"> Display</button>
-                    </td>
-                </tr>
+
+
             </tbody>
         </table>
     </div>
-</div> 
-
+</div>

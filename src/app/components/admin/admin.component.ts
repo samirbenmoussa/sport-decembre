@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatchService } from 'src/app/service/match.service';
+import { PlayerService } from 'src/app/service/player.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +9,65 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor() { }
+  matches: any;
+  players: any;
+  constructor(private matchService: MatchService,
+    private playerService: PlayerService,
+    private router:Router) { }
 
   ngOnInit() {
+    this.getMatches();
+    this.getPlayer();
   }
 
+
+  deleteMatchComponent(id: any) {
+    this.matchService.deleteMatch(id).subscribe(
+      () => {
+        this.getMatches();
+      }
+    )
+
+  }
+
+  getMatches() {
+    this.matchService.getAllMatches().subscribe(
+
+      data => {
+        this.matches = data;
+
+      }
+    )
+  }
+
+  getPlayer() {
+    this.playerService.getAllPlayer().subscribe(
+      data => {
+        this.players = data
+      }
+
+    )
+
+  }
+
+  deletePlayerComponent(id: any) {
+    this.playerService.deletePlayer(id).subscribe(
+      () => {
+        this.getPlayer();
+      }
+    )
+
+  }
+
+
+goToMatch(id:any){
+
+// alert ('ok') ; 
+this.router.navigate([`display-match/${id}`]);
+}
+goToPlayer(id:any){
+
+  // alert ('ok') ; 
+  this.router.navigate([`display-player/${id}`]);
+  }
 }

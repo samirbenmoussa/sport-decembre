@@ -10,14 +10,10 @@ import { MatcheComponent } from '../matche/matche.component';
 export class AllMatchesComponent implements OnInit {
   matches: any;
 
-  constructor(private matchService: MatchService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.matchService.getAllMatches().subscribe(
-      data => {
-        this.matches = data ; 
-      }
-    );
+   
     }
 
 }

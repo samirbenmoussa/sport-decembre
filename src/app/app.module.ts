@@ -26,6 +26,8 @@ import { PlayersComponent } from './components/players/players.component';
 import { DataService } from './service/data.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
+import { DisplayMatchComponent } from './components/display-match/display-match.component';
+import { DisplayPlayerComponent } from './components/display-player/display-player.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,11 @@ import { HttpClientModule } from '@angular/common/http';
     
     AdminComponent,
     
-    PlayersComponent
+    PlayersComponent,
+    
+    DisplayMatchComponent,
+    
+    DisplayPlayerComponent
   ],
   imports: [
     BrowserModule,

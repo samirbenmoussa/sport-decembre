@@ -6,6 +6,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AllMatchesComponent } from './components/all-matches/all-matches.component';
 import { AllPlayerComponent } from './components/all-player/all-player.component';
 import { ContacttComponent } from './components/contactt/contactt.component';
+import { DisplayMatchComponent } from './components/display-match/display-match.component';
+import { DisplayPlayerComponent } from './components/display-player/display-player.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MatcheComponent } from './components/matche/matche.component';
@@ -23,7 +25,10 @@ const routes: Routes = [
   {path: 'add-player', component: AddPlayerComponent},
   {path: 'all-player', component: AllPlayerComponent},
   {path: 'players', component: PlayersComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'display-match/:id', component: DisplayMatchComponent},
+  {path: 'display-player/:id', component: DisplayPlayerComponent}
+  
 
   
 ];

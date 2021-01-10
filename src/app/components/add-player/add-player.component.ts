@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PlayerService } from 'src/app/service/player.service';
 
 @Component({
   selector: 'app-add-player',
@@ -11,7 +13,9 @@ export class AddPlayerComponent implements OnInit {
   players: any = {};
 
   addplayerform!: FormGroup 
-constructor(private formBuilder:FormBuilder) { }
+constructor(private formBuilder:FormBuilder,
+  private router: Router,
+    private playerService: PlayerService) { }
 
 ngOnInit() : void {
   this.addplayerform = this.formBuilder.group ({
@@ -22,7 +26,14 @@ ngOnInit() : void {
   })
 }
 addPlayer() {
-  alert ('btn cliked')
-}
+  // alert ('btn cliked')
+  
+    this.playerService.addPlayer(this.players).subscribe(
+      () => {
+        this.router.navigate(['admin']);
+      }
+    )
+  }
+
 
 }
