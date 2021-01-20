@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatchService } from 'src/app/service/match.service';
-import { MatcheComponent } from '../matche/matche.component';
 
 @Component({
   selector: 'app-all-matches',
@@ -10,10 +9,15 @@ import { MatcheComponent } from '../matche/matche.component';
 export class AllMatchesComponent implements OnInit {
   matches: any;
 
-  constructor() { }
-
+  constructor(private matchService:MatchService) { }
   ngOnInit() {
-   
-    }
-
+    this.matchService.getAllMatches().subscribe(
+      data => {
+        this.matches = data;
+      }
+    );
+  }
+  updateMatches(x:any){
+    this.matches = x;
+  }
 }

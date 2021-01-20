@@ -28,6 +28,9 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { DisplayMatchComponent } from './components/display-match/display-match.component';
 import { DisplayPlayerComponent } from './components/display-player/display-player.component';
+import { EditMatchComponent } from './components/edit-match/edit-match.component';
+import { EditPlayerComponent } from './components/edit-player/edit-player.component';
+import { EditAddComponent } from './components/edit-add/edit-add.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,13 @@ import { DisplayPlayerComponent } from './components/display-player/display-play
     
     DisplayMatchComponent,
     
-    DisplayPlayerComponent
+    DisplayPlayerComponent,
+    
+    EditMatchComponent,
+    
+    EditPlayerComponent,
+    
+    EditAddComponent
   ],
   imports: [
     BrowserModule,

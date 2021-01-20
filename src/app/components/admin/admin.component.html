@@ -42,9 +42,11 @@
                     <td>{{p.numPlayer}}</td>
                     <td>{{p.postePlayer}}</td>
                     <td>{{p.teamPlayer}}</td>
-                    <td> <button class="btn btn-succes"> Edit</button>
-                        <button class="btn btn-danger " style="margin-left: 2%;" (click)='deletePlayerComponent(p.id)'> Delete</button>
-                        <button class="btn btn-warning " style="margin-left: 2%;"(click)='goToPlayer(p.id)'> Display</button>
+                    <td> <button class="btn btn-succes" (click)='goToEditPlayer(p.id)'> Edit</button>
+                        <button class="btn btn-danger " style="margin-left: 2%;" (click)='deletePlayerComponent(p.id)'>
+                            Delete</button>
+                        <button class="btn btn-warning " style="margin-left: 2%;" (click)='goToPlayer(p.id)'>
+                            Display</button>
                     </td>
                 </tr>
 
@@ -74,9 +76,9 @@
                     <td>{{m.teamTwo}}</td>
                     <td>{{m.scoreOne}}</td>
                     <td>{{m.scoreTwo}}</td>
-                    <td> 
-                        <button class="btn btn-success"> Edit</button>
-                        <button class="btn btn-danger"  (click)='deleteMatchComponent(m.id)'>Delete</button>
+                    <td>
+                        <button class="btn btn-success" (click)='goToEditMatch(m.id)'> Edit</button>
+                        <button class="btn btn-danger" (click)='deleteMatchComponent(m.id)'>Delete</button>
                         <button class="btn btn-warning" (click)='goToMatch(m.id)'> Display</button>
                     </td>
                 </tr>

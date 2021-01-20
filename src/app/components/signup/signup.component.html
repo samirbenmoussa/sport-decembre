@@ -68,6 +68,13 @@
             <input type="password" class="form-control" formControlName='ConfirmPassword'
               placeholder="Confirm Password">
           </div>
+          <div *ngIf='signupForm.controls["ConfirmPassword"].invalid && 
+          (signupForm.controls["ConfirmPassword"].dirty || signupForm.controls["ConfirmPassword"].touched)'>
+            <div *ngIf="signupForm.controls['ConfirmPassword'].errors.mustMatch" class="text-danger">
+              ConfirmPassword must match Paswword
+            </div>
+          </div>
+          
 
 
           <div class="form-group">

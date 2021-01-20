@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UseExistingWebDriver } from 'protractor/built/driverProviders';
+import { MustMatch } from 'src/app/validators/mustMatch';
 
 @Component({
   selector: 'app-signup',
@@ -19,6 +20,9 @@ export class SignupComponent implements OnInit {
       Password: ['', [Validators.minLength(8), Validators.required]],
       ConfirmPassword: ['']
 
+    },
+    {
+      validators: MustMatch('Password','ConfirmPassword')
     })
   }
   signup(x: any) {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PlayerService } from 'src/app/service/player.service';
 
 @Component({
   selector: 'app-display-player',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayPlayerComponent implements OnInit {
 
-  constructor() { }
+  id: any;
+  player: any;
+  constructor(
+    private activateRouter: ActivatedRoute,
+    private playerservice: PlayerService
+  ) { }
 
   ngOnInit() {
-  }
+    this.id = this.activateRouter.snapshot.paramMap.get('id');
+    this.playerservice.getPlayerById(this.id).subscribe(
 
-}
+      data => {
+        this.player = data;
+      }
+    )
+    }
+  }

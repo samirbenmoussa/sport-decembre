@@ -46,18 +46,18 @@ export class DataService implements InMemoryDbService {
 
       {
         id: 2,
-        playerName: 'juv',
-        numPlayer: 'atm',
-        postePlayer: '5',
+        playerName: 'jli',
+        numPlayer: '32',
+        postePlayer: 'ATT',
         teamPlayer: 'juv'
       },
 
       {
         id: 3,
         playerName: 'aaa',
-        numPlayer: 'bd',
-        PostePlayer: '12',
-        teamPlayer: '35'
+        numPlayer: '18',
+        postePlayer: 'def',
+        teamPlayer: 'dortumnd'
       },
 
 

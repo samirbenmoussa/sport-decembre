@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   players: any;
   constructor(private matchService: MatchService,
     private playerService: PlayerService,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.getMatches();
@@ -60,14 +60,25 @@ export class AdminComponent implements OnInit {
   }
 
 
-goToMatch(id:any){
+  goToMatch(id: any) {
 
-// alert ('ok') ; 
-this.router.navigate([`display-match/${id}`]);
-}
-goToPlayer(id:any){
+    // alert ('ok') ; 
+    this.router.navigate([`display-match/${id}`]);
+  }
+  goToEditMatch(id: any) {
 
-  // alert ('ok') ; 
-  this.router.navigate([`display-player/${id}`]);
+    // alert ('ok') ; 
+    this.router.navigate([`edit-match/${id}`]);
+  }
+  goToPlayer(id: any) {
+
+    // alert ('ok') ; 
+    this.router.navigate([`display-player/${id}`]);
+  }
+
+  goToEditPlayer(id: any) {
+
+    // alert ('ok') ; 
+    this.router.navigate([`edit-player/${id}`]);
   }
 }

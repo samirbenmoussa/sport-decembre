@@ -9,5 +9,5 @@
 </div>
 
 <div class="container" *ngFor='let match of matches' style="margin-bottom:  150px;">
-  <app-matche [m]='match'></app-matche>
+  <app-matche [m]='match' (newMatches)='updateMatches($event)'></app-matche>
 </div>
