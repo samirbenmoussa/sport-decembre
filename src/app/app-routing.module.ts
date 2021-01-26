@@ -8,6 +8,7 @@ import { AllPlayerComponent } from './components/all-player/all-player.component
 import { ContacttComponent } from './components/contactt/contactt.component';
 import { DisplayMatchComponent } from './components/display-match/display-match.component';
 import { DisplayPlayerComponent } from './components/display-player/display-player.component';
+import { EditAddComponent } from './components/edit-add/edit-add.component';
 import { EditMatchComponent } from './components/edit-match/edit-match.component';
 import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 import { HomeComponent } from './components/home/home.component';
@@ -31,7 +32,10 @@ const routes: Routes = [
   { path: 'display-match/:id', component: DisplayMatchComponent },
   { path: 'display-player/:id', component: DisplayPlayerComponent },
   { path: 'edit-match/:id', component: EditMatchComponent },
-  {path: 'edit-player/:id', component: EditPlayerComponent}  
+  { path: 'edit-player/:id', component: EditPlayerComponent },
+  { path: 'edit-add', component: EditAddComponent }
+
+
 
 
 

@@ -25,12 +25,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { PlayersComponent } from './components/players/players.component';
 import { DataService } from './service/data.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DisplayMatchComponent } from './components/display-match/display-match.component';
 import { DisplayPlayerComponent } from './components/display-player/display-player.component';
 import { EditMatchComponent } from './components/edit-match/edit-match.component';
 import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 import { EditAddComponent } from './components/edit-add/edit-add.component';
+import { XhrInterceptor } from './xhr.interceptor';
 
 @NgModule({
   declarations: [
@@ -78,11 +79,12 @@ import { EditAddComponent } from './components/edit-add/edit-add.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataService),
+   //InMemoryWebApiModule.forRoot(DataService),
 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

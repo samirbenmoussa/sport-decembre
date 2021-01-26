@@ -5,25 +5,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MatchService {
-macthUrl ='api/matches';
-  constructor (private httpClient:HttpClient ) { }
+  macthUrl = 'http://localhost:8080/api/matches';
+  constructor(private httpClient: HttpClient) { }
 
-  getAllMatches(){
-return this.httpClient.get(this.macthUrl);
+  getAllMatches() {
+    return this.httpClient.get(this.macthUrl);
   }
-  getMatchById(id:any){
+  getMatchById(id: any) {
 
-return this.httpClient.get(`${this.macthUrl}/${id}`);
+    return this.httpClient.get(`${this.macthUrl}/${id}`);
   }
-  deleteMatch(id:any){
+  deleteMatch(id: any) {
     return this.httpClient.delete(`${this.macthUrl}/${id}`);
 
   }
-  updateMatch(match:any){
-    return this.httpClient.put(`${this.macthUrl}/${match.id}`,match);
+  updateMatch(match: any) {
+    return this.httpClient.put(`${this.macthUrl}/${match.id}`, match);
 
   }
-  addMatch(match:any){
-return this.httpClient.post(this.macthUrl, match);
+  addMatch(match: any) {
+    return this.httpClient.post(this.macthUrl, match);
   }
 }

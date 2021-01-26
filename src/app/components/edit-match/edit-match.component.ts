@@ -9,24 +9,17 @@ import { MatchService } from 'src/app/service/match.service';
   styleUrls: ['./edit-match.component.css']
 })
 export class EditMatchComponent implements OnInit {
-id : any;
+  id: any;
   match: any = {};
   matchForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
     private matchService: MatchService,
-    private activateRouter:ActivatedRoute,) { }
+    private activateRouter: ActivatedRoute,) { }
 
   ngOnInit(): void {
 
-    this.id = this.activateRouter.snapshot.paramMap.get('id');
-    this.matchService.getMatchById(this.id).subscribe(
-
-      data => {
-        this.match = data;
-      }
-    )
     this.matchForm = this.formBuilder.group({
       teamOne: [''],
       teamTwo: [''],
@@ -34,6 +27,14 @@ id : any;
       scoreTwo: ['']
 
     })
+    this.id = this.activateRouter.snapshot.paramMap.get('id');
+    this.matchService.getMatchById(this.id).subscribe(
+
+      data => {
+        this.match = data;
+      }
+    )
+    
   }
   editMatch() {
     // console.log('here my object', this.match)
@@ -43,4 +44,5 @@ id : any;
       }
     )
   }
+  
 }

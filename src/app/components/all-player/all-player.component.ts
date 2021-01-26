@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/service/player.service';
 
 @Component({
   selector: 'app-all-player',
@@ -9,9 +10,15 @@ export class AllPlayerComponent implements OnInit {
   players:any;
   
 
-  constructor() { }
+  constructor(private playerservice:PlayerService) { }
 
   ngOnInit() {
+    this.playerservice.getAllPlayer().subscribe(
+      data =>{
+        this.players = data ; 
+      }
+     
+    )
 
   }
 
