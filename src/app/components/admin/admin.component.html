@@ -35,9 +35,10 @@
 
                 </tr>
             </thead>
+            
             <tbody>
                 <tr *ngFor=' let p of players'>
-                    <td>{{p.id}}</td>
+                    <td>{{p.idPlayer}}</td>
                     <td>{{p.playerName}}</td>
                     <td>{{p.numPlayer}}</td>
                     <td>{{p.postePlayer}}</td>
@@ -50,7 +51,7 @@
                     </td>
                 </tr>
 
-
+                <button class="btn btn-warning" (click)="goToAddPlayers()"> Add Players</button>
             </tbody>
         </table>
     </div>
@@ -69,6 +70,7 @@
 
                 </tr>
             </thead>
+            
             <tbody>
                 <tr *ngFor=' let m of matches'>
                     <td>{{m.id}}</td>
@@ -83,8 +85,9 @@
                     </td>
                 </tr>
 
-
+                <button class="btn btn-warning" (click)="goToAddMatches()"> Add Matches</button>
             </tbody>
+
         </table>
     </div>
 </div>

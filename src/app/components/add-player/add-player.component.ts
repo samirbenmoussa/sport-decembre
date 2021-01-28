@@ -19,16 +19,27 @@ constructor(private formBuilder:FormBuilder,
 
 ngOnInit() : void {
   this.addplayerform = this.formBuilder.group ({
-    PlayerName: ['', [Validators.minLength(5), Validators.required]],
-    NumPlayer: ['',[ Validators.required]],
-    PostePlayer: ['',[ Validators.required]],
-    TeamPlayer: ['',[ Validators.required]]
+    playerName: ['', [Validators.minLength(5), Validators.required]],
+    numPlayer: ['',[ Validators.required]],
+    postePlayer: ['',[ Validators.required]],
+    teamPlayer: ['',[ Validators.required]]
   })
 }
 addPlayer() {
   // alert ('btn cliked')
+   console.log({
+		"numPlayer":this.addplayerform.controls.numPlayer.value,
+		"postePlayer":this.addplayerform.controls.postePlayer.value,
+		"teamPlayer":this.addplayerform.controls.teamPlayer.value,
+		"playerName":this.addplayerform.controls.playerName.value
+	});
   
-    this.playerService.addPlayer(this.players).subscribe(
+    this.playerService.addPlayer({
+      "numPlayer":this.addplayerform.controls.numPlayer.value,
+      "postePlayer":this.addplayerform.controls.postePlayer.value,
+      "teamPlayer":this.addplayerform.controls.teamPlayer.value,
+      "playerName":this.addplayerform.controls.playerName.value
+    }).subscribe(
       () => {
         this.router.navigate(['admin']);
       }

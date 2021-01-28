@@ -81,4 +81,10 @@ export class AdminComponent implements OnInit {
     // alert ('ok') ; 
     this.router.navigate([`edit-player/${id}`]);
   }
+  goToAddPlayers(){
+    this.router.navigate([`add-player`]);
+  }
+  goToAddMatches(){
+    this.router.navigate([`add-match`]);
+  }
 }
