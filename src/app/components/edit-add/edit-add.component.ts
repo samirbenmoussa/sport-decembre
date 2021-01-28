@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatchService } from 'src/app/service/match.service';
 
@@ -9,57 +9,62 @@ import { MatchService } from 'src/app/service/match.service';
   styleUrls: ['./edit-add.component.css']
 })
 export class EditAddComponent implements OnInit {
-  match: any
-  id: any
-  click: any
-  constructor(private matchService: MatchService,
-    private router: Router,
-    private activatedRouter: ActivatedRoute,
-    private formbuilder: FormBuilder) { }
+  match:any={};
+  loginForm!:FormGroup;
+  id:any;
+  click: any ;
+  constructor(private fb:FormBuilder, 
+    private matchService:MatchService,  
+    private router:Router,
+    private routerAct:ActivatedRoute) {
+   
+   }
 
   ngOnInit() {
-    this.formbuilder.group({
+    this.fb.group({
       teamOne: [''],
       teamTwo: [''],
       scoreOne: [''],
       scoreTwo: ['']
-    });
-    this.id = this.activatedRouter.snapshot.paramMap.get('id');
-    if (this.id != null) {
+    }) ;
+    this.id = this.routerAct.snapshot.paramMap.get('id');
+    if(this.id != null){
       this.matchService.getMatchById(this.id).subscribe(
-        (data) => {
-          this.match = data;
+        (data) =>
+        {
+           this.match= data ;
         }
       )
-      this.click = 'Edit Match';
+      this.click='Edit Match';
     } else {
-      this.click = 'Add Match';
+      this.click='Add Match'
     }
+    
   }
-  editMatch() {
-    // console.log('here my object', this.match)
-    this.matchService.updateMatch(this.match).subscribe(
-      () => {
-        this.router.navigate(['admin']);
-      }
-    )
-  }
-  addMatch() {
-    // console.log('here my object', this.match)
+  AddMatch(){
     this.matchService.addMatch(this.match).subscribe(
-      () => {
-        this.router.navigate(['admin']);
+      ()=>{
+      this.router.navigate(['admin']);
       }
     )
   }
-  AddEditMatch() {
-    this.id = this.activatedRouter.snapshot.paramMap.get('id')
-
-    if (this.id == null) {
-      this.addMatch();
-    }
-    else {
-      this.editMatch();
-    }
+  EditMatch(){
+    this.matchService.updateMatch(this.match).subscribe(
+      ()=> {
+        this.router.navigate([`admin`]);
+      }
+    )
   }
+  AddEditMatch(){
+    this.id = this.routerAct.snapshot.paramMap.get('id');
+    console.log('id', this.id);
+    if(this.id == null){
+      console.log('add', this.id);
+      this.AddMatch();
+    } else {
+      console.log('edit', this.id);
+      this.EditMatch();
+    }
+}
+
 }

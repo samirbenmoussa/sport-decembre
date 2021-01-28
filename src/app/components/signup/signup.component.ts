@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
 
   signup(x: any) {
     this.userService.addUser(x).subscribe(user => {
-      this.Router.navigate(['admin']);
+      this.Router.navigate(['login']);
     })
 
   }
